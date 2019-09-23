@@ -45,9 +45,11 @@ public class Common01AdjustablePanel extends RelativeLayout {
         SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int percent, boolean b) {
+
                 LayoutParams layoutParams = (LayoutParams) parentLayout.getLayoutParams();
                 layoutParams.width = (int) (minWidth + (Common01AdjustablePanel.this.getWidth()
                         - minWidth) * widthBar.getProgress() / 100);
+
                 layoutParams.height = (int) (minHeight + (Common01AdjustablePanel.this.getHeight()
                         - bottomMargin - minHeight) * heightBar.getProgress() / 100);
                 parentLayout.setLayoutParams(layoutParams);
